@@ -38,7 +38,7 @@ public class EleveController {
 		return iService.lireAll();
 	}
 	
-	@GetMapping("/read/id")
+	@GetMapping("/read/{id}")
 	public Optional<Eleve> lireById(Long id) {
 		return iService.lireById(id);
 	}
@@ -48,12 +48,12 @@ public class EleveController {
 		return iService.creer(eleve);
 	}
 	
-	@PutMapping("/update/id")
+	@PutMapping("/update/{id}")
 	public Eleve update(@PathVariable Long id, @RequestBody Eleve eleve) {
 		return iService.modifier(id, eleve);
 	}
 	
-	@DeleteMapping("/delete")
+	@DeleteMapping("/delete/{id}")
 	public String delete(@PathVariable Long id) {
 		return iService.supprimer(id);
 	}
