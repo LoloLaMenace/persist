@@ -58,16 +58,3 @@ public class EleveController {
 		return iService.supprimer(id);
 	}
 }
-
-
-/*
- 	List<Eleve> lireAll();
-	
-	Optional<Eleve> lireById(Long id);
-	
-	Eleve creer(Eleve livre);
-	
-	Eleve modifier(Long id, Eleve eleve);
-	
-	String supprimer(Long id);
-*/
