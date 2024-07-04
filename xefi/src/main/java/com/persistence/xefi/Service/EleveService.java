@@ -20,32 +20,35 @@ public class EleveService implements IEleveService {
 
 	@Override
 	public List<Eleve> lireAll() {
-		
-		return null;
+		return _irepo.findAll();
 	}
 
 	@Override
 	public Optional<Eleve> lireById(Long id) {
-
-		return Optional.empty();
+		return _irepo.findById(id);
 	}
 
 	@Override
-	public Eleve creer(Eleve livre) {
+	public Eleve creer(Eleve eleve) {
 
-		return null;
+		return _irepo.save(eleve);
 	}
 
 	@Override
 	public Eleve modifier(Long id, Eleve eleve) {
 
-		return null;
+		return _irepo.findById(id)
+				.map(E -> {
+					E.setNom(eleve.getNom());
+					E.setPrenom(eleve.getPrenom());
+					return _irepo.save(E);
+				}).orElseThrow(()-> new RuntimeException("Eleve non trouvé !"));
 	}
 
 	@Override
 	public String supprimer(Long id) {
-
-		return null;
+		_irepo.deleteById(id);
+		return "suppression ok";
 	}
 
 }
