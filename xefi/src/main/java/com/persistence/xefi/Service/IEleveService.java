@@ -2,7 +2,9 @@ package com.persistence.xefi.Service;
 
 import java.util.*;
 
-import com.persistence.xefi.Models.Eleve;
+import com.persistence.xefi.Models.*;
+
+
 public interface IEleveService {
 
 	List<Eleve> lireAll();

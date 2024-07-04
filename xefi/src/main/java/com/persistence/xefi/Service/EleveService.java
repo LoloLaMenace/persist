@@ -3,15 +3,20 @@ package com.persistence.xefi.Service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.persistence.xefi.Models.Eleve;
 import com.persistence.xefi.Repository.IEleveRepository;
 
+@Service
 public class EleveService implements IEleveService {
 	
 	//injection des déoendences
 	private IEleveRepository _irepo;
 	
 	//injection via le constructeur
+	@Autowired
 	public EleveService(IEleveRepository _irepo) {
 		super();
 		this._irepo = _irepo;
